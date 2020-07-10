@@ -53,7 +53,7 @@ export default class GalleryEditing extends Plugin {
     conversion.for('upcast').elementToElement({
       model: 'gallery',
       view: {
-        name: 'section',
+        name: 'div',
         classes: 'gallery'
       }
     });
@@ -61,7 +61,7 @@ export default class GalleryEditing extends Plugin {
     conversion.for('dataDowncast').elementToElement({
       model: 'gallery',
       view: {
-        name: 'section',
+        name: 'div',
         classes: 'gallery'
       }
     });
@@ -69,9 +69,9 @@ export default class GalleryEditing extends Plugin {
     conversion.for('editingDowncast').elementToElement({
       model: 'gallery',
       view: (modelElement, viewWriter) => {
-        const section = viewWriter.createContainerElement('section', { class: 'gallery' });
+        const div = viewWriter.createContainerElement('div', { class: 'gallery' });
 
-        return toWidget(section, viewWriter, { label: 'simple box widget' });
+        return toWidget(div, viewWriter, { label: 'simple box widget' });
       }
     });
 
