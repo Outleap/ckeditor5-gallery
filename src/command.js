@@ -22,15 +22,17 @@ export default class GalleryCommand extends Command {
 
 function createGallery(writer) {
   const
-    widget    = writer.createElement('gallery'),
-    container = writer.createElement('galleryImages')
+    widget  = writer.createElement('gallery'),
+    images  = writer.createElement('galleryImages'),
+    caption = writer.createElement('galleryCaption')
   ;
 
-  writer.append(container, widget);
+  writer.append(images, widget);
+  writer.append(caption, widget);
 
   // There must be at least one paragraph for the description to be editable.
   // See https://github.com/ckeditor/ckeditor5/issues/1464.
-  writer.appendElement('paragraph', container);
+  writer.appendElement('paragraph', images);
 
   return widget;
 }

@@ -36,6 +36,12 @@ export default class GalleryEditing extends Plugin {
       allowContentOf: '$root'
     });
 
+    schema.register('galleryCaption', {
+      isLimit: true,
+      allowIn: 'gallery',
+      allowContentOf: '$block'
+    })
+
     schema.addChildCheck((context, childDefinition) => {
       if (context.endsWith('galleryImages') && childDefinition.name == 'gallery') {
           return false;
@@ -96,6 +102,32 @@ export default class GalleryEditing extends Plugin {
       model: 'galleryImages',
       view: (modelElement, viewWriter) => {
         const div = viewWriter.createEditableElement('div', { class: 'gallery-images' });
+
+        return toWidgetEditable(div, viewWriter);
+      }
+    });
+
+
+    conversion.for('upcast').elementToElement({
+      model: 'galleryCaption',
+      view: {
+        name: 'div',
+        classes: 'gallery-caption'
+      }
+    });
+
+    conversion.for('dataDowncast').elementToElement({
+      model: 'galleryCaption',
+      view: {
+        name: 'div',
+        classes: 'gallery-caption'
+      }
+    });
+
+    conversion.for('editingDowncast').elementToElement({
+      model: 'galleryCaption',
+      view: (modelElement, viewWriter) => {
+        const div = viewWriter.createEditableElement('div', { class: 'gallery-caption' });
 
         return toWidgetEditable(div, viewWriter);
       }
