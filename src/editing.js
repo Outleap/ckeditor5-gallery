@@ -54,7 +54,7 @@ export default class GalleryEditing extends Plugin {
       model: 'gallery',
       view: {
         name: 'section',
-        classes: 'gallery-widget'
+        classes: 'gallery'
       }
     });
 
@@ -62,14 +62,14 @@ export default class GalleryEditing extends Plugin {
       model: 'gallery',
       view: {
         name: 'section',
-        classes: 'gallery-widget'
+        classes: 'gallery'
       }
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'gallery',
       view: (modelElement, viewWriter) => {
-        const section = viewWriter.createContainerElement('section', { class: 'gallery-widget' });
+        const section = viewWriter.createContainerElement('section', { class: 'gallery' });
 
         return toWidget(section, viewWriter, { label: 'simple box widget' });
       }
