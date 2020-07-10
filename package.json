@@ -8,7 +8,7 @@
     "@ckeditor/ckeditor5-widget": "^20.0.0",
     "@ckeditor/ckeditor5-ui": "^20.0.0"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "@ckeditor/ckeditor5-basic-styles": "^20.0.0",
     "@ckeditor/ckeditor5-block-quote": "^20.0.0",
     "@ckeditor/ckeditor5-dev-utils": "^21.0.0",
