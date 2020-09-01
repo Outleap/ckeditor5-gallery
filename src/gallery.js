@@ -3,7 +3,7 @@ import { toWidget, toWidgetEditable } from '@ckeditor/ckeditor5-widget/src/utils
 import Widget from '@ckeditor/ckeditor5-widget/src/widget';
 import GalleryCommand from './command.js';
 
-export default class GalleryEditing extends Plugin {
+class GalleryEditing extends Plugin {
   static get requires() {
       return [Widget];
   }
@@ -139,7 +139,7 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import '../theme/gallery.css';
 import icon from '../theme/icons/gallery.svg';
 
-export default class GalleryUI extends Plugin {
+class GalleryUI extends Plugin {
   init() {
     const editor = this.editor;
 
