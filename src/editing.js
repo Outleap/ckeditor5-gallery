@@ -74,10 +74,10 @@ export default class GalleryEditing extends Plugin {
 
     conversion.for('editingDowncast').elementToElement({
       model: 'gallery',
-      view: (modelElement, viewWriter) => {
-        const div = viewWriter.createContainerElement('div', { class: 'gallery' });
+      view: (modelElement, conversionApi) => {
+        const div = conversionApi.writer.createContainerElement('div', { class: 'gallery' });
 
-        return toWidget(div, viewWriter, { label: 'simple box widget' });
+        return toWidget(div, conversionApi.writer, { label: 'simple box widget' });
       }
     });
 
@@ -100,10 +100,10 @@ export default class GalleryEditing extends Plugin {
 
     conversion.for('editingDowncast').elementToElement({
       model: 'galleryImages',
-      view: (modelElement, viewWriter) => {
-        const div = viewWriter.createEditableElement('div', { class: 'gallery-images' });
+      view: (modelElement, conversionApi) => {
+        const div = conversionApi.writer.createEditableElement('div', { class: 'gallery-images' });
 
-        return toWidgetEditable(div, viewWriter);
+        return toWidgetEditable(div, conversionApi.writer);
       }
     });
 
@@ -126,10 +126,10 @@ export default class GalleryEditing extends Plugin {
 
     conversion.for('editingDowncast').elementToElement({
       model: 'galleryCaption',
-      view: (modelElement, viewWriter) => {
-        const div = viewWriter.createEditableElement('div', { class: 'gallery-caption' });
+      view: (modelElement, conversionApi) => {
+        const div = conversionApi.writer.createEditableElement('div', { class: 'gallery-caption' });
 
-        return toWidgetEditable(div, viewWriter);
+        return toWidgetEditable(div, conversionApi.writer);
       }
     });
   }
